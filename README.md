@@ -5,7 +5,7 @@ GenFit is a simple gym & fitness website made for gym freaks.
 ---
 ## 🔥 Features
 
-- Modern single-page layout
+- Modern layout
 - Green gym/fitness theme
 - Sections for:
   - Hero / Main banner
