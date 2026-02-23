@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GENFIT AI - Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Space Grotesk', sans-serif; background: #0a0e14; color: #f0f4f8; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+        .header { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid rgba(232,232,232,0.2); }
+        .logo { font-size: 24px; font-weight: 700; background: linear-gradient(135deg, #f5f5f5, #00d4ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .tabs { display: flex; gap: 10px; margin: 30px 0; flex-wrap: wrap; }
+        .tab { padding: 12px 24px; background: rgba(232,232,232,0.1); border: 1px solid rgba(232,232,232,0.3); border-radius: 12px; cursor: pointer; transition: all 0.3s; }
+        .tab.active { background: linear-gradient(135deg, #e8e8e8, #00d4ff); color: #0a0e14; border-color: transparent; }
+        .tool-section { display: none; }
+        .tool-section.active { display: block; }
+        .card { background: rgba(20,25,32,0.8); border: 1px solid rgba(232,232,232,0.2); border-radius: 16px; padding: 30px; margin: 20px 0; backdrop-filter: blur(20px); }
+        .input-group { margin: 20px 0; }
+        label { display: block; margin-bottom: 8px; color: #00d4ff; font-size: 14px; font-weight: 600; }
+        input, select, textarea { width: 100%; padding: 12px; background: rgba(0,0,0,0.4); border: 1px solid rgba(232,232,232,0.3); border-radius: 8px; color: #f0f4f8; font-family: inherit; }
+        textarea { min-height: 100px; resize: vertical; }
+        .btn { padding: 14px 28px; background: linear-gradient(135deg, #e8e8e8, #00d4ff); border: none; border-radius: 12px; color: #0a0e14; font-weight: 700; cursor: pointer; transition: all 0.3s; }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,212,255,0.5); }
+        .result { margin-top: 20px; padding: 20px; background: rgba(232,232,232,0.05); border: 1px solid rgba(232,232,232,0.3); border-radius: 12px; white-space: pre-wrap; line-height: 1.8; }
+        .loading { text-align: center; padding: 40px; color: #00d4ff; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .metric { text-align: center; padding: 20px; background: rgba(232,232,232,0.05); border-radius: 12px; }
+        .metric-value { font-size: 32px; font-weight: 700; color: #00d4ff; }
+        .metric-label { font-size: 14px; color: rgba(255,255,255,0.6); margin-top: 8px; }
+        @media (max-width: 768px) {
+            .tabs { flex-direction: column; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">⚡ GENFIT AI</div>
+            <div style="color: rgba(255,255,255,0.6);">Offline AI-Powered Fitness</div>
+        </div>
+
+        <div class="tabs">
+            <div class="tab active" onclick="switchTab('workout')">🏋️ AI Workout</div>
+            <div class="tab" onclick="switchTab('meal')">🍽️ Meal Planner</div>
+            <div class="tab" onclick="switchTab('bmi')">⚖️ BMI & Calories</div>
+            <div class="tab" onclick="switchTab('supplement')">💊 Supplements</div>
+            <div class="tab" onclick="switchTab('form')">📹 Form Analysis</div>
+        </div>
+
+        <!-- Workout Generator -->
+        <div id="workout" class="tool-section active">
+            <div class="card">
+                <h2 style="margin-bottom: 20px;">🎯 AI Workout Generator</h2>
+                <div class="input-group">
+                    <label>Fitness Goal</label>
+                    <select id="workoutGoal">
+                        <option value="muscle-gain">Muscle Gain</option>
+                        <option value="weight-loss">Weight Loss</option>
+                        <option value="strength">Strength Building</option>
+                        <option value="endurance">Endurance</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Available Equipment</label>
+                    <input type="text" id="equipment" placeholder="e.g., dumbbells, barbell, or 'none'">
+                </div>
+                <div class="input-group">
+                    <label>Workout Duration (minutes)</label>
+                    <input type="number" id="duration" value="45">
+                </div>
+                <div class="input-group">
+                    <label>Fitness Level</label>
+                    <select id="fitnessLevel">
+                        <option value="beginner">Beginner</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advanced">Advanced</option>
+                    </select>
+                </div>
+                <button class="btn" onclick="generateWorkout()">Generate Workout Plan</button>
+                <div id="workoutResult"></div>
+            </div>
+        </div>
+
+        <!-- Other sections remain the same... -->
+        <div id="meal" class="tool-section">
+            <div class="card">
+                <h2>🍽️ AI Meal Planner</h2>
+                <p style="margin: 20px 0; color: rgba(255,255,255,0.6);">Generate personalized meal plans based on your calorie and dietary needs.</p>
+                <button class="btn" onclick="alert('Meal planner coming soon!')">Generate Meal Plan</button>
+            </div>
+        </div>
+
+        <div id="bmi" class="tool-section">
+            <div class="card">
+                <h2>⚖️ BMI & Calorie Calculator</h2>
+                <p style="margin: 20px 0; color: rgba(255,255,255,0.6);">Calculate your BMI and daily calorie needs.</p>
+                <button class="btn" onclick="alert('BMI calculator coming soon!')">Calculate</button>
+            </div>
+        </div>
+
+        <div id="supplement" class="tool-section">
+            <div class="card">
+                <h2>💊 Supplement Stack AI</h2>
+                <p style="margin: 20px 0; color: rgba(255,255,255,0.6);">Get personalized supplement recommendations.</p>
+                <button class="btn" onclick="alert('Supplement recommendations coming soon!')">Get Recommendations</button>
+            </div>
+        </div>
+
+        <div id="form" class="tool-section">
+            <div class="card">
+                <h2>📹 Form Analyzer</h2>
+                <p style="margin: 20px 0; color: rgba(255,255,255,0.6);">Analyze your exercise form and get corrections.</p>
+                <button class="btn" onclick="alert('Form analyzer coming soon!')">Analyze Form</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tab) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tool-section').forEach(s => s.classList.remove('active'));
+            event.target.classList.add('active');
+            document.getElementById(tab).classList.add('active');
+        }
+
+        async function generateWorkout() {
+            const goal = document.getElementById('workoutGoal').value;
+            const equipment = document.getElementById('equipment').value || 'none';
+            const duration = document.getElementById('duration').value;
+            const level = document.getElementById('fitnessLevel').value;
+
+            document.getElementById('workoutResult').innerHTML = '<div class="loading">🤖 Generating your workout...</div>';
+
+            setTimeout(() => {
+                const workout = `🎯 ${duration}-MINUTE ${goal.toUpperCase()} WORKOUT
+Level: ${level.toUpperCase()} | Equipment: ${equipment}
+
+WARM-UP (5 minutes):
+- Jumping jacks: 2 minutes
+- Arm circles: 1 minute
+- Leg swings: 1 minute
+- Dynamic stretches: 1 minute
+
+MAIN WORKOUT (${duration - 10} minutes):
+${goal === 'muscle-gain' ? `
+- Push-ups: 4 sets x 12 reps (Rest: 60s)
+- Dumbbell rows: 4 sets x 10 reps (Rest: 60s)
+- Squats: 4 sets x 15 reps (Rest: 60s)
+- Shoulder press: 3 sets x 12 reps (Rest: 60s)
+- Bicep curls: 3 sets x 15 reps (Rest: 45s)
+- Tricep dips: 3 sets x 12 reps (Rest: 45s)` : ''}
+${goal === 'weight-loss' ? `
+- Burpees: 3 sets x 15 reps (Rest: 30s)
+- Mountain climbers: 3 sets x 30 seconds (Rest: 30s)
+- Jump squats: 3 sets x 20 reps (Rest: 45s)
+- High knees: 3 sets x 45 seconds (Rest: 30s)
+- Plank: 3 sets x 60 seconds (Rest: 45s)` : ''}
+${goal === 'strength' ? `
+- Deadlifts: 5 sets x 5 reps (Rest: 3 min)
+- Bench press: 4 sets x 6 reps (Rest: 2.5 min)
+- Squats: 4 sets x 6 reps (Rest: 2.5 min)
+- Pull-ups: 4 sets x 8 reps (Rest: 2 min)
+- Overhead press: 3 sets x 8 reps (Rest: 2 min)` : ''}
+${goal === 'endurance' ? `
+- Running/cycling: 20 minutes steady pace
+- Jump rope: 5 sets x 2 minutes (Rest: 1 min)
+- Bodyweight squats: 4 sets x 25 reps (Rest: 45s)
+- Push-ups: 4 sets x 20 reps (Rest: 45s)
+- Plank: 4 sets x 90 seconds (Rest: 60s)` : ''}
+
+COOL-DOWN (5 minutes):
+- Light walking: 2 minutes
+- Static stretching: 3 minutes
+- Deep breathing exercises
+
+💡 TIPS:
+- Stay hydrated throughout
+- Focus on proper form over speed
+- Listen to your body
+- Progress gradually each week
+- Rest 48 hours between similar workouts`;
+
+                document.getElementById('workoutResult').innerHTML = `<div class="result">${workout}</div>`;
+            }, 1500);
+        }
+    </script>
+</body>
+</html>

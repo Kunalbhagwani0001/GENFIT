@@ -1,0 +1,14 @@
+{
+  "name": "genfit-ai-backend",
+  "version": "1.0.0",
+  "description": "Backend server for GENFIT AI with Anthropic Claude integration",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.32.1",
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  }
+}

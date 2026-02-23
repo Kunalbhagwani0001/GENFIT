@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GENFIT AI - Transform your fitness journey with AI-powered workout plans, nutrition guidance, and personalized coaching. Start free today.">
+    <meta name="theme-color" content="#9333ea">
+    <title>GENFIT AI — Your AI-Powered Fitness Intelligence</title>
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Ambient Background -->
+    <div class="ambient-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- NAV -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="#hero" class="logo" aria-label="GENFIT AI Home">
+                <span class="logo-icon" aria-hidden="true">⚡</span>
+                <span class="logo-text">GENFIT<span class="logo-accent">AI</span></span>
+            </a>
+            <ul class="nav-links" role="navigation">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How it Works</a></li>
+                <li><a href="#tools">Tools</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="app.html" class="btn-ghost">Sign In</a>
+                <a href="app.html" class="btn-primary">Get Started Free</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-badge">
+            <span class="badge-dot"></span>
+            AI-Powered Fitness Platform — Now in Beta
+        </div>
+        <h1 class="hero-title">
+            Train Smarter.<br>
+            <span class="gradient-text">Not Harder.</span>
+        </h1>
+        <p class="hero-subtitle">
+            GENFIT AI analyzes your body, goals, and lifestyle to build precision workout and nutrition plans that actually work — powered by advanced machine learning.
+        </p>
+        <div class="hero-actions">
+            <a href="app.html" class="btn-primary btn-large">
+                <span>Start Your AI Journey</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#how-it-works" class="btn-outline btn-large">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.5"/><path d="M6.5 5.5L10.5 8l-4 2.5V5.5z" fill="currentColor"/></svg>
+                Watch Demo
+            </a>
+        </div>
+        <div class="hero-stats">
+            <div class="stat">
+                <span class="stat-num">50K+</span>
+                <span class="stat-label">Active Users</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <span class="stat-num">4.9★</span>
+                <span class="stat-label">App Rating</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <span class="stat-num">2M+</span>
+                <span class="stat-label">Workouts Generated</span>
+            </div>
+        </div>
+        <div class="hero-mockup">
+            <div class="mockup-card">
+                <div class="mockup-header">
+                    <span class="mockup-dot r"></span>
+                    <span class="mockup-dot y"></span>
+                    <span class="mockup-dot g"></span>
+                    <span class="mockup-title">GENFIT AI — Dashboard</span>
+                </div>
+                <div class="mockup-body">
+                    <div class="mockup-metric">
+                        <div class="metric-label">Today's Goal</div>
+                        <div class="metric-ring">
+                            <svg viewBox="0 0 80 80" class="ring-svg">
+                                <circle cx="40" cy="40" r="32" class="ring-bg"/>
+                                <circle cx="40" cy="40" r="32" class="ring-progress"/>
+                            </svg>
+                            <span class="ring-val">73%</span>
+                        </div>
+                    </div>
+                    <div class="mockup-info">
+                        <div class="info-row"><span class="info-icon">🔥</span><div><div class="info-title">Calories Burned</div><div class="info-val">1,240 kcal</div></div></div>
+                        <div class="info-row"><span class="info-icon">⚡</span><div><div class="info-title">AI Streak</div><div class="info-val">14 days</div></div></div>
+                        <div class="info-row"><span class="info-icon">💪</span><div><div class="info-title">Next Workout</div><div class="info-val">Upper Body</div></div></div>
+                    </div>
+                </div>
+                <div class="mockup-ai-bar">
+                    <span class="ai-dot"></span>
+                    AI Coach: "Time for your protein shake!"
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section features" id="features">
+        <div class="section-label">FEATURES</div>
+        <h2 class="section-title">Built for <span class="gradient-text">peak performance</span></h2>
+        <p class="section-sub">Every feature is engineered to give you a competitive edge — whether you're a beginner or an elite athlete.</p>
+        <div class="features-grid">
+            <div class="feature-card card-glow" data-reveal>
+                <div class="feat-icon">🧠</div>
+                <h3>Adaptive AI Brain</h3>
+                <p>Our AI learns from your performance, recovery, and feedback daily — constantly refining your plan to match your real-world progress.</p>
+                <div class="feat-tag">Machine Learning</div>
+            </div>
+            <div class="feature-card" data-reveal>
+                <div class="feat-icon">📊</div>
+                <h3>Precision Analytics</h3>
+                <p>Real-time tracking of macros, calories, strength progression, and cardiovascular health with beautiful, actionable visualizations.</p>
+                <div class="feat-tag">Deep Analytics</div>
+            </div>
+            <div class="feature-card" data-reveal>
+                <div class="feat-icon">🥗</div>
+                <h3>Smart Nutrition Engine</h3>
+                <p>Auto-generated meal plans tailored to your fitness goals, dietary restrictions, local food availability, and metabolic rate.</p>
+                <div class="feat-tag">Nutrition AI</div>
+            </div>
+            <div class="feature-card" data-reveal>
+                <div class="feat-icon">🏃</div>
+                <h3>Dynamic Workouts</h3>
+                <p>Workouts that evolve as you do. GENFIT AI auto-adjusts intensity, volume, and recovery windows based on your readiness score.</p>
+                <div class="feat-tag">Auto-Periodization</div>
+            </div>
+            <div class="feature-card" data-reveal>
+                <div class="feat-icon">😴</div>
+                <h3>Recovery Intelligence</h3>
+                <p>Sleep quality, HRV, and stress data feed into your recovery score — so you always know when to push and when to rest.</p>
+                <div class="feat-tag">Biometric Sync</div>
+            </div>
+            <div class="feature-card" data-reveal>
+                <div class="feat-icon">🤖</div>
+                <h3>24/7 AI Coach</h3>
+                <p>Ask anything. Your personal AI coach is available around the clock for form tips, meal swaps, motivation, and plan adjustments.</p>
+                <div class="feat-tag">Always On</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section how-it-works" id="how-it-works">
+        <div class="section-label">HOW IT WORKS</div>
+        <h2 class="section-title">Three steps to your <span class="gradient-text">best self</span></h2>
+        <div class="steps-container">
+            <div class="step" data-reveal>
+                <div class="step-number">01</div>
+                <div class="step-content">
+                    <div class="step-icon">📋</div>
+                    <h3>Build Your Profile</h3>
+                    <p>Share your body metrics, fitness history, goals, and schedule. Our AI processes 40+ data points to understand you deeply.</p>
+                </div>
+                <div class="step-connector"></div>
+            </div>
+            <div class="step" data-reveal>
+                <div class="step-number">02</div>
+                <div class="step-content">
+                    <div class="step-icon">⚡</div>
+                    <h3>AI Generates Your Plan</h3>
+                    <p>In seconds, receive a fully personalized workout program and nutrition plan calibrated to your exact physiology and goals.</p>
+                </div>
+                <div class="step-connector"></div>
+            </div>
+            <div class="step" data-reveal>
+                <div class="step-number">03</div>
+                <div class="step-content">
+                    <div class="step-icon">📈</div>
+                    <h3>Track & Evolve</h3>
+                    <p>Log sessions, monitor biometrics, and watch the AI adapt your plan weekly based on actual results and feedback.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI TOOLS -->
+    <section class="section ai-tools" id="tools">
+        <div class="section-label">AI FITNESS TOOLS</div>
+        <h2 class="section-title">A full arsenal at your <span class="gradient-text">fingertips</span></h2>
+        <div class="tools-grid">
+            <div class="tool-card tool-large" data-reveal>
+                <div class="tool-badge">Most Used</div>
+                <div class="tool-icon">🎯</div>
+                <h3>AI Workout Generator</h3>
+                <p>Describe your available equipment, time, and energy level — get a custom workout in seconds, adapted to your program.</p>
+                <a href="app.html" class="tool-link">Try it free →</a>
+            </div>
+            <div class="tool-card" data-reveal>
+                <div class="tool-icon">🍽️</div>
+                <h3>Meal Planner</h3>
+                <p>AI-crafted meal plans that hit your macro targets while matching your taste preferences.</p>
+                <a href="app.html" class="tool-link">Try it →</a>
+            </div>
+            <div class="tool-card" data-reveal>
+                <div class="tool-icon">⚖️</div>
+                <h3>BMI & Calorie Calculator</h3>
+                <p>Instant analysis of your metabolic needs with TDEE, BMI, and macro breakdowns.</p>
+                <a href="app.html" class="tool-link">Try it →</a>
+            </div>
+            <div class="tool-card" data-reveal>
+                <div class="tool-icon">💊</div>
+                <h3>Supplement Stack AI</h3>
+                <p>Personalized supplement recommendations based on your goals, deficiencies, and budget.</p>
+                <a href="app.html" class="tool-link">Try it →</a>
+            </div>
+            <div class="tool-card" data-reveal>
+                <div class="tool-icon">📹</div>
+                <h3>Form Analyzer</h3>
+                <p>Upload a video clip and get AI feedback on your exercise form and injury prevention tips.</p>
+                <a href="app.html" class="tool-link">Try it →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section testimonials" id="testimonials">
+        <div class="section-label">TESTIMONIALS</div>
+        <h2 class="section-title">Real results, <span class="gradient-text">real people</span></h2>
+        <div class="testimonials-grid">
+            <div class="testi-card" data-reveal>
+                <div class="testi-stars">★★★★★</div>
+                <p>"I lost 18kg in 4 months. The AI plan felt like having a personal trainer, dietitian, and coach in one app. Absolutely life-changing."</p>
+                <div class="testi-author">
+                    <div class="testi-avatar">AK</div>
+                    <div>
+                        <div class="testi-name">Arjun Kapoor</div>
+                        <div class="testi-role">Software Engineer, Bangalore</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card testi-featured" data-reveal>
+                <div class="testi-stars">★★★★★</div>
+                <p>"GENFIT AI planned my entire marathon training cycle. It adjusted my runs when I was tired and pushed me when I had capacity. I hit my PR by 12 minutes."</p>
+                <div class="testi-author">
+                    <div class="testi-avatar">SR</div>
+                    <div>
+                        <div class="testi-name">Sneha Rajput</div>
+                        <div class="testi-role">Marathon Runner, Mumbai</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card" data-reveal>
+                <div class="testi-stars">★★★★★</div>
+                <p>"The nutrition engine is unreal. It even accounts for my vegetarian diet and gives me enough protein to hit my muscle gain targets. Incredible."</p>
+                <div class="testi-author">
+                    <div class="testi-avatar">MV</div>
+                    <div>
+                        <div class="testi-name">Meera Verma</div>
+                        <div class="testi-role">Yoga Instructor, Delhi</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section pricing" id="pricing">
+        <div class="section-label">PRICING</div>
+        <h2 class="section-title">Invest in your <span class="gradient-text">transformation</span></h2>
+        <p class="section-sub">Start free. Scale when you're ready. No hidden fees, ever.</p>
+        <div class="pricing-grid">
+            <div class="price-card" data-reveal>
+                <div class="price-tier">Starter</div>
+                <div class="price-amount"><span class="price-currency">₹</span>0<span class="price-period">/mo</span></div>
+                <p class="price-desc">Perfect to get started with AI fitness.</p>
+                <ul class="price-features">
+                    <li>✓ AI Workout Generator (5/month)</li>
+                    <li>✓ Basic Nutrition Tracking</li>
+                    <li>✓ BMI & Calorie Calculator</li>
+                    <li>✓ 7-Day Meal Planner</li>
+                    <li class="disabled">✗ Adaptive AI Coach</li>
+                    <li class="disabled">✗ Biometric Sync</li>
+                </ul>
+                <a href="app.html" class="btn-outline-full">Get Started Free</a>
+            </div>
+            <div class="price-card price-popular" data-reveal>
+                <div class="popular-badge">Most Popular</div>
+                <div class="price-tier">Pro</div>
+                <div class="price-amount"><span class="price-currency">₹</span>799<span class="price-period">/mo</span></div>
+                <p class="price-desc">For serious athletes ready to transform.</p>
+                <ul class="price-features">
+                    <li>✓ Unlimited AI Workouts</li>
+                    <li>✓ Advanced Nutrition Engine</li>
+                    <li>✓ Adaptive AI Coach (24/7)</li>
+                    <li>✓ Progress Analytics Dashboard</li>
+                    <li>✓ Biometric & Wearable Sync</li>
+                    <li>✓ Form Analyzer (10 videos/mo)</li>
+                </ul>
+                <a href="app.html" class="btn-primary-full">Start Pro Trial</a>
+            </div>
+            <div class="price-card" data-reveal>
+                <div class="price-tier">Elite</div>
+                <div class="price-amount"><span class="price-currency">₹</span>1,999<span class="price-period">/mo</span></div>
+                <p class="price-desc">Unlimited everything. For the obsessed.</p>
+                <ul class="price-features">
+                    <li>✓ Everything in Pro</li>
+                    <li>✓ Unlimited Form Analysis</li>
+                    <li>✓ Supplement Stack AI</li>
+                    <li>✓ Live Coaching Sessions</li>
+                    <li>✓ Priority AI Response</li>
+                    <li>✓ Custom Brand Removal</li>
+                </ul>
+                <a href="app.html" class="btn-outline-full">Go Elite</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq" id="faq">
+        <div class="section-label">FAQ</div>
+        <h2 class="section-title">Frequently asked <span class="gradient-text">questions</span></h2>
+        <div class="faq-list">
+            <div class="faq-item" data-reveal>
+                <button class="faq-question" type="button" aria-expanded="false">
+                    <span>How does GENFIT AI create my personalized plan?</span>
+                    <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>GENFIT AI analyzes over 40 data points including your age, weight, height, fitness history, goals, available equipment, dietary preferences, and lifestyle habits. Our ML models then generate a fully personalized plan that evolves based on your real-world results.</p>
+                </div>
+            </div>
+            <div class="faq-item" data-reveal>
+                <button class="faq-question" type="button" aria-expanded="false">
+                    <span>Can I use GENFIT AI if I'm a complete beginner?</span>
+                    <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Absolutely. GENFIT AI is designed for all fitness levels. Beginners receive simplified, progressive plans with detailed instructions and form guidance. The AI ensures you never jump into something unsafe or overwhelming.</p>
+                </div>
+            </div>
+            <div class="faq-item" data-reveal>
+                <button class="faq-question" type="button" aria-expanded="false">
+                    <span>Does it work without gym equipment?</span>
+                    <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes! You can specify "home workout" or "no equipment" and the AI will generate effective bodyweight routines. It supports home gyms, outdoor training, resistance bands, and full commercial gym setups.</p>
+                </div>
+            </div>
+            <div class="faq-item" data-reveal>
+                <button class="faq-question" type="button" aria-expanded="false">
+                    <span>How is this different from other fitness apps?</span>
+                    <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Most fitness apps give you static, generic plans. GENFIT AI is dynamic — it learns, adapts, and responds to your real progress in real time. It combines workout planning, nutrition, recovery, and coaching in one integrated AI system.</p>
+                </div>
+            </div>
+            <div class="faq-item" data-reveal>
+                <button class="faq-question" type="button" aria-expanded="false">
+                    <span>Is my health data secure?</span>
+                    <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Your data is encrypted end-to-end and stored securely. We follow GDPR and healthcare data standards. We never sell your data to third parties. You can export or delete your data at any time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="section cta-section">
+        <div class="cta-card" data-reveal>
+            <div class="cta-glow"></div>
+            <div class="cta-content">
+                <div class="section-label">GET STARTED</div>
+                <h2>Your best body is <span class="gradient-text">one click away.</span></h2>
+                <p>Join 50,000+ people already training smarter with GENFIT AI. Free to start. No credit card required.</p>
+                <div class="cta-actions">
+                    <a href="app.html" class="btn-primary btn-large">
+                        <span>Start Free Today</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    <p class="cta-note">No credit card · Cancel anytime · Results guaranteed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="#hero" class="logo" aria-label="GENFIT AI Home">
+                    <span class="logo-icon" aria-hidden="true">⚡</span>
+                    <span class="logo-text">GENFIT<span class="logo-accent">AI</span></span>
+                </a>
+                <p>The future of fitness is intelligent. Train with purpose, powered by AI.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="Twitter" rel="noopener noreferrer" target="_blank">𝕏</a>
+                    <a href="#" class="social-link" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank">in</a>
+                    <a href="#" class="social-link" aria-label="Instagram" rel="noopener noreferrer" target="_blank">IG</a>
+                    <a href="#" class="social-link" aria-label="YouTube" rel="noopener noreferrer" target="_blank">YT</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <div class="footer-col-title">Product</div>
+                    <a href="#">Features</a>
+                    <a href="#">Pricing</a>
+                    <a href="#">AI Tools</a>
+                    <a href="#">Changelog</a>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-col-title">Company</div>
+                    <a href="#">About</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Press</a>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-col-title">Support</div>
+                    <a href="#">Help Center</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2025 GENFIT AI. All rights reserved.</span>
+            <span>Built with ❤️ and machine learning</span>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
