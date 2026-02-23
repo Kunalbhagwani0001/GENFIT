@@ -15,4 +15,5 @@ GenFit is a simple gym & fitness website made for gym freaks.
   - Contact / Footer
 - Clean and simple HTML structure
 
-
+## PROJECT PREVIEW
+https://genfit-ai.netlify.app/
